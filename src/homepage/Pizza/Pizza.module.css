@@ -1,0 +1,43 @@
+*{
+  box-sizing: border-box;
+}
+.Pizza{
+  margin: 20px auto 0px auto;
+  width: 80%;
+}
+.Pizza h1{
+  text-align: left;
+}
+.PizzaContainer{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  column-gap: 10px;
+}
+.PizzaContainer div h1{
+  font-size: 1.2rem;
+}
+.PizzaContainer div p{
+  color: #918F8E;
+  font-size: 0.9rem;
+  text-align: left;
+}
+.PizzaContainer div>div{
+  margin: 20px 0 5px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+}
+.PizzaContainer div>div h3{
+  font-size: 1rem;
+}
+
+.PizzaContainer div>div button{
+  background-color: white;
+  color: #F97225;
+  border: 1px solid #F97225;
+  border-radius: 5px;
+  padding: 10px;
+  width: 100px;
+}
