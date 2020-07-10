@@ -1,69 +1,53 @@
 *{
   box-sizing: border-box;
 }
-.Pizza{
+
+.Desserts{
   margin: 20px auto 0px auto;
   width: 80%;
 }
-.Pizza h1{
-  text-align: left;
-}
-.PizzaContainer{
+.DessertsContainer{
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(5, 1fr);
+  grid-template-rows: repeat(2, 1fr);
   column-gap: 10px;
 }
-.PizzaContainer img:hover{
+.DessertsContainer img:hover{
   transform: translateY(2px);
   cursor: pointer;
 }
-.PizzaContainer div h1{
-  font-size: 1.2rem;
-}
-.PizzaCard {
+.DessertsCard{
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-
-.PizzaCardHeader {
+.DessertsCard div:first-of-type{
   width: 100%;
 }
-
-.PizzaCardHeader h1 {
+.DessertsCard div:first-of-type h1{
   font-size: 1.2rem;
-  width: 100%;
 }
-
-.PizzaCardHeader p {
+.DessertsCard div:first-of-type p{
   color: #918F8E;
   font-size: 0.9rem;
-  text-align: left;
 }
-
-.PizzaCardFooter {
+.DessertsCard div:last-of-type{
   margin: 20px 0 5px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-top: 16px;
 }
-
-.PizzaCardFooter h3 {
-  font-size: 1rem;
-}
-
-.PizzaCardFooter button {
+.DessertsCard div:last-of-type button{
   background-color: white;
   color: #F97225;
   border: 1px solid #F97225;
   border-radius: 5px;
   padding: 10px;
-  width: 100px;
+  width: 150px;
 }
 @media (max-width: 500px){
-  .PizzaContainer{
+  .DessertsContainer{
     display: flex;
     flex-direction: column;
   }
