@@ -1,0 +1,54 @@
+*{
+  box-sizing: border-box;
+}
+
+.Drinks{
+  margin: 20px auto 0px auto;
+  width: 80%;
+}
+.DrinksContainer{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  column-gap: 10px;
+}
+.DrinksContainer img:hover{
+  transform: translateY(2px);
+  cursor: pointer;
+}
+.DrinksCard{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.DrinksCard div:first-of-type{
+  width: 100%;
+}
+.DrinksCard div:first-of-type h1{
+  font-size: 1.2rem;
+}
+.DrinksCard div:first-of-type p{
+  color: #918F8E;
+  font-size: 0.9rem;
+}
+.DrinksCard div:last-of-type{
+  margin: 20px 0 5px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+}
+.DrinksCard div:last-of-type button{
+  background-color: white;
+  color: #F97225;
+  border: 1px solid #F97225;
+  border-radius: 5px;
+  padding: 10px;
+  width: 150px;
+}
+@media (max-width: 500px){
+  .DrinksContainer{
+    display: flex;
+    flex-direction: column;
+  }
+}
