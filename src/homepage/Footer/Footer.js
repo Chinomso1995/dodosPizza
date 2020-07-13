@@ -2,7 +2,9 @@ import React from 'react';
 import styles from '../Footer/Footer.module.css';
 import googlePlay from '../../assets/footerimages/googleplay.svg';
 import appleStore from '../../assets/footerimages/applestore.svg';
-
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faFacebookSquare} from '@fortawesome/free-brands-svg-icons';
+import{faInstagramSquare} from '@fortawesome/free-brands-svg-icons';
 
 const footer = () => {
   return (
@@ -27,13 +29,14 @@ const footer = () => {
                <div>
                   <ul>
                     <li>DODO PIZZA</li>
-                    <li></li>
+                    <li><FontAwesomeIcon icon="copyright"/> 2020</li>
                     <li>Terms and conditions</li>
                     <li>Dodo Pizza Story</li>
                   </ul>
                </div>
                <div>
-
+                 <FontAwesomeIcon style={{paddingRight: "10px"}} icon={faFacebookSquare}/>
+                 <FontAwesomeIcon style={{paddingRight: "10px"}} icon={faInstagramSquare}/>
                </div>
            </div>
          </div>

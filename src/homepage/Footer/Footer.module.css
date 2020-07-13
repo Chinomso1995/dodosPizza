@@ -16,6 +16,8 @@
 .FooterContainer{
   margin: 20px auto 0px auto;
   width: 80%;
+  display: flex;
+  flex-direction: column;
 }
 .FirstFooterSection{
   padding-top: 30px;
@@ -46,5 +48,74 @@
 .FooterContainer div:nth-of-type(2) h1{
   padding-top: 10px;
   font-size: 1.5rem;
+}
+.LastFooterContainer::before{
+  content: '';
+  position: absolute;
+  background-color: rgba(225, 225, 225, 0.3);
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: 2px;
+  
+}
+.LastFooterContainer{
+  padding-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 60px;
+  padding-bottom: 60px;
+  position: relative;
+}
+.LastFooterContainer div:first-of-type ul{
+   
+   list-style: none;
+   color: white;
+   display: flex;
+   justify-content: left;
+   
+}
+.LastFooterContainer div:first-of-type ul li{
+  padding-right: 10px;
+}
+.LastFooterContainer div:last-of-type{
+  font-size: 30px;
+}
+@media (max-width: 500px){
+  
+  .FirstFooterSection{
+    flex-direction: column;
+    order:2;
+   
+  }
+  .FooterContainer div:nth-of-type(2){
+    text-align: left;
+    order: 1;
+    position: relative;
+ 
+  }
+  
+  .FooterContainer div:nth-of-type(2) h1:after{
+     content: 'contact@dodopizza.ng';
+     position: absolute;
+     color: rgba(225, 225, 225, 0.3);
+     font-size: 0.9rem;
+     transform: translate(-215px,40px);
+     padding-bottom: 10px;
+  }
+  .FooterContainer div:nth-of-type(2):after{
+  content: '';
+  position: absolute;
+  background-color: rgba(225, 225, 225, 0.3);
+  width: 100%;
+  top: 140px;
+  left: 0;
+  height: 2px;
+  
+  }
+  .LastFooterContainer{
+    order: 3;
+  }
 }
 

@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import './Components/Fontawesome/Fontawesome'
 import Homepage from './homepage/homepage'
 
 
