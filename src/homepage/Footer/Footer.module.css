@@ -127,16 +127,7 @@
      transform: translate(-215px,40px);
      padding-bottom: 10px;
   }
-  .FooterContainer div:nth-of-type(2):after{
-  content: '';
-  position: absolute;
-  background-color: rgba(225, 225, 225, 0.3);
-  width: 100%;
-  top: 150px;
-  left: 0;
-  height: 2px;
   
-  }
   .LastFooterContainer{
     order: 3;
     
