@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 10px;
+  margin-top: 0px;
   
 }
 .FirstHeaderContainer img{
@@ -13,7 +13,7 @@
   display: flex;
   align-items: center;
 }
-.FirstHeaderContainer div:last-of-type{
+.FirstHeaderContainer div:nth-of-type(2){
   margin-left: 80px;
 }
 .FirstHeaderContainer div:first-of-type h1{
@@ -25,11 +25,11 @@
   font-weight: 500;
   font-size: 1.2rem;
 }
-.FirstHeaderContainer div:last-of-type h3{
+.FirstHeaderContainer div:nth-of-type(2) h3{
   font-size: 1rem;
   color: rgba(225, 225, 225, 0.6);
 }
-.FirstHeaderContainer div:last-of-type h1{
+.FirstHeaderContainer div:nth-of-type(2) h1{
   font-size: 1.2rem;
   transform: translateX(-17px);
 }
@@ -40,20 +40,52 @@
   border: 1px solid rgba(225, 225, 225, 0.6);
   background-color: white;
 }
-.secondHeaderContainer{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-bottom: 35px;
-}
-.secondHeaderContainer div:first-of-type ul{
-  list-style: none;
-  display: flex;
-  justify-content: left;
-  margin-top: 20px;
+.Navbar{
+  display: none;
 }
 @media (max-width: 500px){
   .FirstHeaderContainer{
+    margin-left: 15px;
+    margin-top: 5px;
+    
+  }
+  .FirstHeaderContainer img{
+    width: 30px;
+    height: 30px;
+  }
+  .FirstHeaderContainer div:first-of-type h1{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 1.2rem;
+  }
+  .FirstHeaderContainer div:first-of-type p{
+     display: none;
+  }
+   .FirstHeaderContainer div:nth-of-type(2) h3{
     display: none;
+  }
+  .FirstHeaderContainer div:nth-of-type(2) h1{
+    display: none;
+  }
+  .FirstHeaderContainer button{
+    display: none;
+  }
+  .Navbar{
+    display: block;
+  
+  }
+  .Navbar div:first-of-type{
+    width: 15px;
+    height: 3px;
+    background-color: black;
+    margin: 5px 40px 0 0;
+  }
+  
+  .Navbar div:last-of-type{
+    width: 15px;
+    height: 3px;
+    background-color: black;
+    margin: 5px 40px 0 0;
+    
   }
 }

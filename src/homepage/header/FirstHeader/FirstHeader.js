@@ -19,6 +19,10 @@ const firstHeader = (props)=>{
       <div>
          <button>Login</button>
       </div>
+      <div className={styles.Navbar}>
+           <div></div>
+           <div></div>
+      </div>
     </div>
   
   )

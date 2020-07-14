@@ -28,7 +28,7 @@ class header extends Component {
 
            <SecondHeader showLogo={!this.state.showNav}/>
        </div>
-     </div> 
+     </div>
     
   )
 }

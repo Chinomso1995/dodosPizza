@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import ReactDOM from 'react-dom';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; 
+import styles from '../carousel/Carousel.module.css';
 import { Carousel } from 'react-responsive-carousel'
 import firstCarouselImage from '../../assets/first-carousel-image.jpeg';
 import secondCarouselImage from '../../assets/second-carousel-image.jpeg';
@@ -12,7 +12,7 @@ import fifthCarouselImage from '../../assets/fifth-carousel-image.jpeg';
 class carousel extends Component{
   render(){
     return (
-      <Carousel showArrows={false}>
+      <Carousel showArrows={false} className={styles.Carousel}>
        <div>
         <img src={firstCarouselImage} alt="firstImage"/>
        </div>

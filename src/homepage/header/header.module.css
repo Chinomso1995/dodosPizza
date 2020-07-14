@@ -4,6 +4,9 @@
   background-color: white;
   z-index: 100;
   width: 100%;
+  top:0;
+  left: 0;
+  
 }
 .Header>div{
   margin: 0px auto 0px auto;
@@ -15,6 +18,10 @@
   
   
 }
-
+@media (max-width: 500px){
+  .Header>div{
+    width: 100%;
+  }
+}
 
 
