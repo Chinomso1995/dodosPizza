@@ -2,6 +2,7 @@ import React from 'react';
 import styles from '../Secondheader/SecondHeader.module.css';
 import Logo from '../../../assets/logo.png';
 const secondHeader = (props) => {
+  
   return (
   <div className={styles.secondHeaderContainer}>
     <div>

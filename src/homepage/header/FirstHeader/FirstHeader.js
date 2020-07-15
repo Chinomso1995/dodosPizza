@@ -19,7 +19,7 @@ const firstHeader = (props)=>{
       <div>
          <button>Login</button>
       </div>
-      <div className={styles.Navbar}>
+      <div className={styles.Navbar} onClick={props.clicked}>
            <div></div>
            <div></div>
       </div>
