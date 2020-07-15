@@ -78,14 +78,14 @@
     width: 15px;
     height: 3px;
     background-color: black;
-    margin: 5px 40px 0 0;
+    margin: 5px 10px 0 0;
   }
   
   .Navbar div:last-of-type{
     width: 15px;
     height: 3px;
     background-color: black;
-    margin: 5px 40px 0 0;
+    margin: 5px 10px 0 0;
     
   }
 }
