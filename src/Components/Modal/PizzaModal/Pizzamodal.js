@@ -4,19 +4,29 @@ import pizzapicture from '../../../assets/meatybbq.jpg'
 
 class pizzaModal extends Component {
   state = {
-    toggle: false
+    selected: "small"
   }
-  toggleHandler = ()=>{
+  toggleHandler = (size)=> ()=>{
     this.setState({
-			toggle: !this.state.toggle
+			toggle: size
 		});
   }
   render (){
+    let attachedClasses = [styles.ImageContainer]
+    if(this.state.toggle==='small'){
+      attachedClasses = [styles.ImageContainer, styles.Small]
+    }
+    if(this.state.toggle==="medium"){
+      attachedClasses = [styles.ImageContainer, styles.Medium]
+    }
+    if(this.state.toggle==="large"){
+      attachedClasses=[styles.ImageContainer, styles.Large]
+    }
     return (
       <div className={styles.Pizzamodal}>
           <div className={styles.ModalContainer}>
-            <div className={styles.ImageContainer}>
-              <img src={pizzapicture} alt="pizzapicture"/>
+            <div className={attachedClasses.join(' ')}>
+              <img  src={pizzapicture} alt="pizzapicture"/>
             </div>
             <div className={styles.DetailsContainer}>
               <div>
@@ -26,16 +36,19 @@ class pizzaModal extends Component {
                 </div>
                 <div>
                 <form className={styles.switchButton}>
-                  <input type="radio" name="pizza" id="small" value="small" onChange={this.toggleHandler}
-					          checked={!this.state.toggle}/>
-                  <label for="small">25cm</label>
-                  <input type="radio" name="pizza" id="medium" value="medium" onChange={this.toggleHandler}
-					          checked={this.state.toggle}/>
-                  <label for="medium">30cm</label>
-                  <input type="radio" name="pizza" id="large" value="large" onChange={this.toggleHandler}
-					          checked={this.state.toggle}/>
-                  <label for="large">35cm</label>
+                  <input type="radio" name="pizza" id="small" value="small" onChange={this.toggleHandler("small")}
+					        checked={this.state.toggle==="small"}/>
+                  <label for="small">Small</label>
+                  <input type="radio" name="pizza" id="medium" value="medium" onChange={this.toggleHandler("medium")}
+					        checked={this.state.toggle==="medium"}/>
+                  <label for="medium">Medium</label>
+                  <input type="radio" name="pizza" id="large" value="large" onChange={this.toggleHandler("large")}
+					        checked={this.state.toggle==="large"}/>
+                  <label for="large">Large</label>
                 </form>
+                <div className={styles.orderButton}>
+                  <button>Add to basket for ₦4,100</button>
+                </div>
               </div>
               </div>
             </div>

@@ -69,3 +69,63 @@
 .switch-field label:last-of-type {
   border-radius: 0 4px 4px 0;
 }
+.orderButton{
+  margin-top: 80px;
+}
+.orderButton button{
+  background-color: #F07718;
+  height: 40px;
+  padding: 10px;
+  border: 0;
+  border-radius: 10px;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+}
+.Small{
+  transform: scale(0.8);
+}
+.Medium{
+  transform: scale(1);
+}
+.Large{
+  transform: scale(1.5);
+}
+@media (max-width: 500px){
+  .Pizzamodal{
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+  }
+  .ModalContainer{
+    flex-direction: column;
+    justify-content: center;
+  }
+  .ImageContainer img{
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+  .TextDetails{
+    text-align: center;
+  }
+  .switchButton{
+    transform: translateX(8%);
+    
+  }
+  .orderButton button{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+  .Small{
+    transform: scale(0.7);
+  }
+  .Medium{
+    transform: scale(0.9);
+  }
+  .Large{
+    transform: scale(1.2);
+  }
+}
