@@ -96,6 +96,7 @@
     width: 100%;
     top: 0;
     left: 0;
+    bottom: 0;
   }
   .ModalContainer{
     flex-direction: column;
@@ -110,8 +111,15 @@
   .TextDetails{
     text-align: center;
   }
+  .Form{
+    display: block;
+    text-align: center;
+  }
   .switchButton{
-    transform: translateX(8%);
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
     
   }
   .orderButton button{

@@ -35,6 +35,7 @@ class pizzaModal extends Component {
                   <p>Red onions, bell peppers, <br/> chicken, pineapple, mozarella, <br/> tomatosauce, curry, chilli peppers.</p>
                 </div>
                 <div>
+                <div className={styles.Form}>
                 <form className={styles.switchButton}>
                   <input type="radio" name="pizza" id="small" value="small" onChange={this.toggleHandler("small")}
 					        checked={this.state.toggle==="small"}/>
@@ -46,6 +47,7 @@ class pizzaModal extends Component {
 					        checked={this.state.toggle==="large"}/>
                   <label for="large">Large</label>
                 </form>
+                </div>
                 <div className={styles.orderButton}>
                   <button>Add to basket for ₦4,100</button>
                 </div>
