@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import styles from '../PizzaModal/Pizzamodal.module.css';
-import pizzapicture from '../../../assets/meatybbq.jpg'
+
 
 class pizzaModal extends Component {
   state = {
@@ -26,13 +26,13 @@ class pizzaModal extends Component {
       <div className={styles.Pizzamodal}>
           <div className={styles.ModalContainer}>
             <div className={attachedClasses.join(' ')}>
-              <img  src={pizzapicture} alt="pizzapicture"/>
+              <img  src={this.props.image} alt="pizzapicture"/>
             </div>
             <div className={styles.DetailsContainer}>
               <div>
                 <div className={styles.TextDetails}>
-                  <h1>Chicken Curry</h1>
-                  <p>Red onions, bell peppers, <br/> chicken, pineapple, mozarella, <br/> tomatosauce, curry, chilli peppers.</p>
+                  <h1>{this.props.name}</h1>
+                  <p>{this.props.ingredients}</p>
                 </div>
                 <div>
                 <div className={styles.Form}>
