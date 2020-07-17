@@ -49,7 +49,7 @@ class pizzaModal extends Component {
                 </form>
                 </div>
                 <div className={styles.orderButton}>
-                  <button>Add to basket for ₦4,100</button>
+                  <button>Add to basket for ₦{this.props.price}</button>
                 </div>
               </div>
               </div>
