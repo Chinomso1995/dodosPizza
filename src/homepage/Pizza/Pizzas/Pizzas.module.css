@@ -4,9 +4,11 @@
 .Pizza{
   margin: 20px auto 0px auto;
   width: 80%;
+  
 }
 .Pizza h1{
   text-align: left;
+  
 }
 .PizzaContainer{
   display: grid;
@@ -40,14 +42,15 @@
   color: #918F8E;
   font-size: 0.9rem;
   text-align: left;
+  height: 50px;
+  max-height: 70px;
 }
 
 .PizzaCardFooter {
-  margin: 20px 0 5px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 16px;
+  margin: 20px 0 5px 0;;
 }
 
 .PizzaCardFooter h3 {

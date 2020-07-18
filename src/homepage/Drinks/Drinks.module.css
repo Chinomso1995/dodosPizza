@@ -36,7 +36,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 16px;
+ 
 }
 .DrinksCard div:last-of-type button{
   background-color: white;

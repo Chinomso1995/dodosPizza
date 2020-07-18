@@ -19,7 +19,8 @@ import meatyBbq from '../../../assets/meatybbq.jpg';
 import hawaiian from '../../../assets/hawaiin.jpg';
 import veggieOverload from '../../../assets/veggieoverload.jpg';
 import Modal from './PizzaModal/Pizzamodal';
-import Aux from '../../../hoc/Auxillary/Auxillary'
+import Aux from '../../../hoc/Auxillary/Auxillary';
+import Backdrop from '../../../Components/Backdrop/Backdrop'
 
 class pizzas extends Component {
   state ={
@@ -55,9 +56,12 @@ class pizzas extends Component {
   
   return (
    <Aux>
+     { this.state.showModal?
+       <Backdrop clicked={this.toggleModalHandler}/>: null}
    { this.state.showModal ?
     
      <Modal 
+     clicked={this.toggleModalHandler}
      ingredients={this.state.selectedPizza.ingredients} 
      price={this.state.selectedPizza.price} 
      image={this.state.selectedPizza.image} 
@@ -71,16 +75,16 @@ class pizzas extends Component {
          {pizza.map(p=>{
            
     return <div>
-       <div className={styles.PizzaCard}>
-           <div className={styles.PizzaCardHeader}>
+      <div className={styles.PizzaCard}>
+        <div className={styles.PizzaCardHeader}>
            <img src={p.image} alt="pizza"/>
            <h1>{p.name}</h1>
           <p>{p.ingredients}</p>
-          </div>
-          <div className={styles.PizzaCardFooter}>
-          <h3>from ₦{p.price}</h3>
+        </div>
+        <div className={styles.PizzaCardFooter}>
+           <h3>from ₦{p.price}</h3>
            <button onClick={()=>this.toggleModalHandler(p)}>Select</button>
-         </div>  
+        </div>  
     </div>
     </div>
   })}

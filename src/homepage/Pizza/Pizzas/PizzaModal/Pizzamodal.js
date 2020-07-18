@@ -4,12 +4,16 @@ import styles from '../PizzaModal/Pizzamodal.module.css';
 
 class pizzaModal extends Component {
   state = {
-    selected: "small"
+    selected: "small",
+    showModal: true
   }
   toggleHandler = (size)=> ()=>{
     this.setState({
 			toggle: size
 		});
+  }
+  removeModalHandler = ()=>{
+    this.setState({showModal: false})
   }
   render (){
     let attachedClasses = [styles.ImageContainer]
@@ -23,7 +27,7 @@ class pizzaModal extends Component {
       attachedClasses=[styles.ImageContainer, styles.Large]
     }
     return (
-      <div className={styles.Pizzamodal}>
+        <div className={styles.Pizzamodal}>
           <div className={styles.ModalContainer}>
             <div className={attachedClasses.join(' ')}>
               <img  src={this.props.image} alt="pizzapicture"/>
@@ -53,9 +57,13 @@ class pizzaModal extends Component {
                 </div>
               </div>
               </div>
-            </div>
-            
+            </div>  
+            <div className={styles.Navbar} onClick={this.props.clicked}>
+            <div></div>
+            <div></div>
           </div>
+          </div>
+         
       </div>
     )
   }

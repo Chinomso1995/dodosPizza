@@ -16,14 +16,24 @@
 .ModalContainer{
   display: flex;
   justify-content: space-between;
+  
+}
+.ImageContainer{
+  width: 60%;
+  max-width: 65%;
+  height: 60%;
+  max-height: 70%;
 }
 .ImageContainer img{
   margin-top: 150px;
   margin-left: 90px;
+  
 }
 .DetailsContainer{
-  margin-right: 20px;
+  margin-right: 10px;
   margin-top: 40px;
+  width: 40%;
+  max-width: 50%;
 }
 .TextDetails h1{
   font-size: 1.2rem;
@@ -90,6 +100,26 @@
 .Large{
   transform: scale(1.5);
 }
+.Navbar{
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  cursor: pointer;
+}
+.Navbar div{
+  height: 3px;
+  width: 20px;
+  background-color: black;
+  margin: 5px;
+  
+  
+}
+.Navbar div:first-of-type{
+  transform: rotate(45deg) translate(5.5px);
+}
+.Navbar div:last-of-type{
+  transform: rotate(-45deg) translate(5.5px);
+}
 @media (max-width: 500px){
   .Pizzamodal{
     height: 100%;
@@ -103,6 +133,10 @@
     flex-direction: column;
     justify-content: center;
   }
+  .ImageContainer{
+    width: 100%;
+    max-width: 100%;
+  }
   .ImageContainer img{
     margin-top: 30px;
     margin-left: auto;
@@ -111,6 +145,10 @@
   }
   .TextDetails{
     text-align: center;
+  }
+  .DetailsContainer {
+    width: 100%;
+    max-width: 100%;
   }
   .Form{
     display: block;
@@ -139,5 +177,8 @@
   }
   .Large{
     transform: scale(1.2);
+  }
+  .Navbar{
+    top: 20px;
   }
 }
