@@ -2,9 +2,9 @@ import React, {Component} from 'react';
 import styles from '../Pizzabuilder/Pizzabuilder.module.css';
 import Pizzapan from '../assets/Pizzabuilder/pizzapan.png';
 import Marinara from '../assets/Pizzabuilder/sauce-1.png';
-import Ranchdressing from '../assets/Pizzabuilder/sauce-2.png';
-import Bbqsauce from '../assets/Pizzabuilder/sauce-3.png';
-import Hotsauce from '../assets/Pizzabuilder/sauce-4.png';
+import Ranchdressing from '../assets/Pizzabuilder/sauce-4.png';
+import Bbqsauce from '../assets/Pizzabuilder/sauce-2.png';
+import Hotsauce from '../assets/Pizzabuilder/sauce-3.png';
 import Mozarella from '../assets/Pizzabuilder/cheese1.png';
 import Extramozarella from '../assets/Pizzabuilder/cheese-2.png';
 import soMuchMozz from '../assets/Pizzabuilder/cheese-3.png';
@@ -25,6 +25,18 @@ import Bacon from '../assets/Pizzabuilder/bacon.png';
 import Chicken from '../assets/Pizzabuilder/chicken.png';
 
 class PizzaBuilder extends Component {
+  state={
+    checked: false
+  }
+  toggleSauceHandler =(saucetype) => ()=>{
+    this.setState({toggle: saucetype});
+  }
+  toggleCheeseHandler = (cheesetype)=> ()=>{
+    this.setState({togglecheese: cheesetype});
+  }
+  handleCheckClick = ()=>{
+    this.setState({checked: !this.state.checked})
+  }
   
   render (){
     return (
@@ -37,46 +49,45 @@ class PizzaBuilder extends Component {
              <div>
                <div className={styles.Pizza}>
                  <div>
-                   <div className={styles.Pizzapan}>
-                     <img src={Pizzapan} alt="pizzapan"/>
-                   </div>
-                   <div className={styles.Sauce}>
-                    <div>
-                      <img src={Marinara} alt="marinara"/>
+                   <img className={styles.Pizzapan} src={Pizzapan} alt="pizzapan"/>
+                   <div>
+                     <div className={styles.Sauce} >
+                     <div>
+                      <img style={{display: this.state.toggle === "Marinara"?"block":null, position:'absolute', zIndex: '100', height: '400px', width: '400px', top:'375px', left: '130px'}}  src={Marinara} alt="marinara"/>
+                     </div>
+                     <div>
+                      <img style={{display: this.state.toggle === "Ranchdressing"?"block":null, position:'absolute', zIndex: '100', height: '400px', width: '400px', top:'375px', left: '130px'}} src={Ranchdressing} alt = "ranchdressing"/>
+                     </div>
+                     <div>
+                      <img style={{display: this.state.toggle === "bbqsauce"?"block":null, position:'absolute', zIndex: '100', height: '400px', width: '400px', top:'375px', left: '130px'}} src={Bbqsauce} alt="bbqsauce"/>
                     </div>
                     <div>
-                      <img src={Ranchdressing} alt = "ranchdressing"/>
-                    </div>
-                    <div>
-                      <img src={Bbqsauce} alt="bbqsauce"/>
-                    </div>
-                    <div>
-                      <img src={Hotsauce} alt="hotsauce"/>
+                      <img style={{display: this.state.toggle === "hotsauce"?"block":null, position:'absolute', zIndex: '100', height: '400px', width: '400px', top:'375px', left: '130px'}} src={Hotsauce} alt="hotsauce"/>
                     </div>
                    </div>
                    <div className={styles.Cheese}>
                       <div>
-                        <img src={Mozarella} alt="mozarella"/>
+                        <img style={{display: this.state.togglecheese === "mozzarella"?"block":null, position:'absolute', zIndex: '200', height: '400px', width: '400px', top:'375px', left: '130px'}} src={Mozarella} alt="mozarella"/>
                       </div>
                       <div>
-                        <img src={Extramozarella} alt="extramozarella"/>
+                        <img style={{display: this.state.togglecheese === "extramozarella"?"block":null, position:'absolute', zIndex: '200', height: '400px', width: '400px', top:'375px', left: '130px'}} src={Extramozarella} alt="extramozarella"/>
                       </div>
                       <div>
-                        <img src={soMuchMozz} alt="somuchmozz"/>
+                        <img  style={{display: this.state.togglecheese === "somuchmozz"?"block":null, position:'absolute', zIndex: '200', height: '400px', width: '400px', top:'375px', left: '130px'}}src={soMuchMozz} alt="somuchmozz"/>
                       </div>
                       <div>
-                        <img src={Parmesan} alt="parmesan"/>
+                        <img style={{display: this.state.togglecheese === "parmesan"?"block":null, position:'absolute', zIndex: '200', height: '400px', width: '400px', top:'375px', left: '130px'}} src={Parmesan} alt="parmesan"/>
                       </div>
                       <div>
-                        <img src={Cheddarcheese} alt="cheddarcheese"/>
+                        <img style={{display: this.state.togglecheese === "cheddarcheese"?"block":null, position:'absolute', zIndex: '200', height: '400px', width: '400px', top:'375px', left: '130px'}}   src={Cheddarcheese} alt="cheddarcheese"/>
                       </div>
                       <div>
-                        <img src={Extracheddar} alt="extracheddar"/>
+                        <img style={{display: this.state.togglecheese === "extracheddar"?"block":null, position:'absolute', zIndex: '200', height: '400px', width: '400px', top:'375px', left: '130px'}}  src={Extracheddar} alt="extracheddar"/>
                       </div>
                      </div>
                      <div className={styles.Toppings}>
                      <div>
-                       <img src={Pepperoni} alt="pepperoni"/>
+                       <img style={{display: this.state.checked?"block":null, position:'absolute', zIndex: '300', height: '400px', width: '400px', top:'375px', left: '130px'}} src={Pepperoni} alt="pepperoni"/>
                      </div>
                      <div>
                        <img src={Sausage} alt="sausage"/>
@@ -113,113 +124,165 @@ class PizzaBuilder extends Component {
                      </div>
                   </div>
                  </div> 
+                 </div>
                  <div className={styles.Input}>
                    <div>
                      <h1>Sauce</h1>
-                     <div>
+                     <div className={styles.InputSauce}>
                        <div>
-                        <input type="radio" name="sauce" id="Marinara" value = "Marinara"/>
+                        <input type="radio" name="sauce" id="Marinara" value = "Marinara"
+                        onChange={this.toggleSauceHandler("Marinara")}
+                        checked={this.state.toggle==="Marinara"}/>
                         <label for="Marinara">Marinara</label>
                        </div>
                        <div>
-                        <input type="radio" name="sauce" id="Ranchdressing" value = "Ranchdressing"/>
+                        <input type="radio" name="sauce" id="Ranchdressing" value = "Ranchdressing"
+                        onChange={this.toggleSauceHandler("Ranchdressing")}
+                        checked={this.state.toggle==="Ranchdressing"}/>
                         <label for="Ranchdressing">Ranch Dressing</label>
                        </div>
                        <div>
-                        <input type="radio" name="sauce" id="bbqsauce" value = "bbqsauce"/>
+                        <input type="radio" name="sauce" id="bbqsauce" value = "bbqsauce"
+                        onChange={this.toggleSauceHandler("bbqsauce")}
+                        checked={this.state.toggle==="bbqsauce"}/>
                         <label for="bbqsauce">BBQ sauce</label>
                        </div>
                        <div>
-                        <input type="radio" name="sauce" id="hotsauce" value = "hotsauce"/>
+                        <input type="radio" name="sauce" id="hotsauce" value = "hotsauce"
+                        onChange={this.toggleSauceHandler("hotsauce")}
+                        checked={this.state.toggle==="hotsauce"}/>
                         <label for="hotsauce">Hot sauce</label>
                        </div>
                      </div>
                    </div> 
                    <div>
                      <h1>Cheese</h1>
-                     <div>
+                     <div className={styles.InputCheese}>
                        <div>
-                        <input type="radio" name="cheese" id="Mozzarella" value = "Mozzarella"/>
-                        <label for="Mozzarella">Mozzarella</label>
+                        <input type="radio" name="cheese" id="mozzarella" value = "mozzarella"
+                        onChange={this.toggleCheeseHandler("mozzarella")}
+                        checked={this.state.togglecheese==="mozzarella"}/>
+                        <label for="mozzarella">Mozzarella</label>
                        </div>
                        <div>
-                        <input type="radio" name="cheese" id="extramozzarella" value = "extramozarella"/>
+                        <input type="radio" name="cheese" id="extramozzarella" value = "extramozarella"
+                        onChange={this.toggleCheeseHandler("extramozarella")}
+                        checked={this.state.togglecheese==="extramozarella"}/>
                         <label for="extramozzarella">Extra Mozzarella</label>
                        </div>
                        <div>
-                        <input type="radio" name="cheese"  id="somuchmozz" value = "somuchmozz"/>
+                        <input type="radio" name="cheese"  id="somuchmozz" value = "somuchmozz"
+                        onChange={this.toggleCheeseHandler("somuchmozz")}
+                        checked={this.state.togglecheese==="somuchmozz"}/>
                         <label for="somuchmozz">So Much Mozz</label>
                        </div>
                        <div>
-                        <input type="radio" name="cheese" id="parmesan" value = "parmesan"/>
+                        <input type="radio" name="cheese" id="parmesan" value = "parmesan"
+                        onChange={this.toggleCheeseHandler("parmesan")}
+                        checked={this.state.togglecheese==="parmesan"}/>
                         <label for="parmesan">Parmesan</label>
                        </div>
                        <div>
-                        <input type="radio" name="cheese" id="cheddarcheese" value = "cheddarcheese"/>
+                        <input type="radio" name="cheese" id="cheddarcheese" value = "cheddarcheese"
+                        onChange={this.toggleCheeseHandler("cheddarcheese")}
+                        checked={this.state.togglecheese==="cheddarcheese"}/>
                         <label for="cheddarcheese">Cheddar Cheese</label>
                        </div>
                        <div>
-                        <input type="radio" name="cheese" id="extracheddar" value = "extracheddar"/>
+                        <input type="radio" name="cheese" id="extracheddar" value = "extracheddar"
+                        onChange={this.toggleCheeseHandler("extracheddar")}
+                        checked={this.state.togglecheese==="extracheddar"}/>
                         <label for="extracheddar">Extra Cheddar</label>
                        </div>
                      </div>
                    </div>
                    <div>
                     <h1>Toppings</h1>
-                    <div>
+                    <div className={styles.InputToppings}>
                       <div>
-                       <input type="checkbox" name="pepperoni"  id="pepperoni" value = "pepperoni"/>
+                       <input type="checkbox" name="pepperoni"  id="pepperoni" value = "pepperoni"
+                       onChange={this.handleCheckClick}
+                       checked={this.state.checked}
+                       />
                        <label for="pepperoni">Pepperoni</label>
                       </div>
                       <div>
-                       <input type="checkbox" name ="sausage" id="sausage" value="sausage"/>
+                       <input type="checkbox" name ="sausage" id="sausage" value="sausage"
+                        onChange={this.handleCheckClick}
+                        checked={this.state.checked}
+                      />
                        <label for = "sausage">Sausage</label>
                       </div>
                       <div>
-                       <input type="checkbox" name ="pineapple" id="pineapple" value="pineapple"/>
+                       <input type="checkbox" name ="pineapple" id="pineapple" value="pineapple"
+                       onChange={this.handleCheckClick}
+                       checked={this.state.checked}
+                       />
                        <label for = "pineapple">Pineapple</label>
                       </div>
                       <div>
-                       <input type="checkbox" name ="peppers" id="peppers" value="peppers"/>
+                       <input type="checkbox" name ="peppers" id="peppers" value="peppers"
+                        onChange={this.handleCheckClick}
+                        checked={this.state.checked}
+                       />
                        <label for = "peppers">Peppers</label>
                       </div>
                       <div>
-                       <input type="checkbox" name ="sausage" id="sausage" value="sausage"/>
-                       <label for = "sausage">Sausage</label>
-                      </div>
-                      <div>
-                       <input type="checkbox" name ="onions" id="onions" value="onions"/>
+                       <input type="checkbox" name ="onions" id="onions" value="onions"
+                        onChange={this.handleCheckClick}
+                        checked={this.state.checked}
+                       />
                        <label for = "onions">Onions</label>
                       </div>
                       <div>
-                       <input type="checkbox" name ="tomatoes" id="tomatoes" value="tomatoes"/>
+                       <input type="checkbox" name ="tomatoes" id="tomatoes" value="tomatoes"
+                       onChange={this.handleCheckClick}
+                       checked={this.state.checked}
+                      />
                        <label for = "tomatoes">Tomatoes</label>
                       </div>
                       <div>
-                       <input type="checkbox" name ="spinach" id="spinach" value="spinach"/>
+                       <input type="checkbox" name ="spinach" id="spinach" value="spinach"
+                        onChange={this.handleCheckClick}
+                        checked={this.state.checked}
+                       />
                        <label for = "spinach">Spinach</label>
                       </div>
                       <div>
-                       <input type="checkbox" name ="mushrooms" id="mushrooms" value="mushrooms"/>
+                       <input type="checkbox" name ="mushrooms" id="mushrooms" value="mushrooms"
+                        onChange={this.handleCheckClick}
+                        checked={this.state.checked}
+                       />
                        <label for = "mushrooms">Mushrooms</label>
                       </div>
                       <div>
-                       <input type="checkbox" name ="blackolives" id="blackolives" value="blackolives"/>
+                       <input type="checkbox" name ="blackolives" id="blackolives" value="blackolives"
+                        onChange={this.handleCheckClick}
+                        checked={this.state.checked}
+                       />
                        <label for = "blackolives">Black Olives</label>
                       </div>
                       <div>
-                       <input type="checkbox" name ="ham" id="ham" value="ham"/>
+                       <input type="checkbox" name ="ham" id="ham" value="ham"
+                        onChange={this.handleCheckClick}
+                        checked={this.state.checked}
+                       />
                        <label for = "ham">Ham</label>
                       </div>
                       <div>
-                       <input type="checkbox" name ="bacon" id="bacon" value="bacon"/>
+                       <input type="checkbox" name ="bacon" id="bacon" value="bacon"
+                       onChange={this.handleCheckClick}
+                       checked={this.state.checked}
+                      />
                        <label for = "bacon">Bacon</label>
                       </div> 
                       <div>
-                       <input type="checkbox" name ="chicken" id="chicken" value="chicken"/>
+                       <input type="checkbox" name ="chicken" id="chicken" value="chicken"
+                        onChange={this.handleCheckClick}
+                       checked={this.state.checked}
+                       />
                        <label for = "chicken">Chicken</label>
-                      </div>
-                       
+                      </div>   
                     </div>
                   </div>
                  </div>  
