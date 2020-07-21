@@ -23,6 +23,8 @@ import Blackolives from '../assets/Pizzabuilder/olives.png';
 import Ham from '../assets/Pizzabuilder/ham.png';
 import Bacon from '../assets/Pizzabuilder/bacon.png';
 import Chicken from '../assets/Pizzabuilder/chicken.png';
+import Footer from '../homepage/Footer/Footer';
+import Aux from '../hoc/Auxillary/Auxillary'
 
 class PizzaBuilder extends Component {
   state={
@@ -42,7 +44,8 @@ class PizzaBuilder extends Component {
   
   render (){
     return (
-        <section className={styles.PizzaBuilder}>
+      <Aux>
+        <div className={styles.PizzaBuilder}>
              <div className={styles.PizzaBuilderHeading}>
                <h1>Create your own</h1>
                <h2>Show us what you got!</h2>
@@ -50,86 +53,86 @@ class PizzaBuilder extends Component {
              </div>
              <div>
                <div className={styles.Pizza}>
-                 <div>
-                   <img className={styles.Pizzapan} src={Pizzapan} alt="pizzapan"/>
+                 <div className={styles.Pizzapan}>
+                   <img className={styles.Pizzapanimage}  src={Pizzapan} alt="pizzapan"/>
                    <div>
                      <div className={styles.Sauce} >
                      <div>
-                      <img style={{display: this.state.toggle === "Marinara"?"block":null, position:'absolute', zIndex: '100', height: '400px', width: '400px', top:'375px', left: '130px'}}  src={Marinara} alt="marinara"/>
+                      <img style={{display: this.state.toggle === "Marinara"?"block":null, position:'absolute', zIndex: '100', height: '400px', width: '400px', top:'0', left: '0'}}  src={Marinara} alt="marinara"/>
                      </div>
                      <div>
-                      <img style={{display: this.state.toggle === "Ranchdressing"?"block":null, position:'absolute', zIndex: '100', height: '400px', width: '400px', top:'375px', left: '130px'}} src={Ranchdressing} alt = "ranchdressing"/>
+                      <img style={{display: this.state.toggle === "Ranchdressing"?"block":null, position:'absolute', zIndex: '100', height: '400px', width: '400px', top:'0', left: '0'}} src={Ranchdressing} alt = "ranchdressing"/>
                      </div>
                      <div>
-                      <img style={{display: this.state.toggle === "bbqsauce"?"block":null, position:'absolute', zIndex: '100', height: '400px', width: '400px', top:'375px', left: '130px'}} src={Bbqsauce} alt="bbqsauce"/>
+                      <img style={{display: this.state.toggle === "bbqsauce"?"block":null, position:'absolute', zIndex: '100', height: '400px', width: '400px', top:'0', left: '0'}} src={Bbqsauce} alt="bbqsauce"/>
                     </div>
                     <div>
-                      <img style={{display: this.state.toggle === "hotsauce"?"block":null, position:'absolute', zIndex: '100', height: '400px', width: '400px', top:'375px', left: '130px'}} src={Hotsauce} alt="hotsauce"/>
+                      <img style={{display: this.state.toggle === "hotsauce"?"block":null, position:'absolute', zIndex: '100', height: '400px', width: '400px', top:'0', left: '0'}} src={Hotsauce} alt="hotsauce"/>
                     </div>
                    </div>
                    <div className={styles.Cheese}>
                       <div>
-                        <img style={{display: this.state.togglecheese === "mozzarella"?"block":null, position:'absolute', zIndex: '200', height: '400px', width: '400px', top:'375px', left: '130px'}} src={Mozarella} alt="mozarella"/>
+                        <img style={{display: this.state.togglecheese === "mozzarella"?"block":null, position:'absolute', zIndex: '200', height: '400px', width: '400px', top:'0', left: '0'}} src={Mozarella} alt="mozarella"/>
                       </div>
                       <div>
-                        <img style={{display: this.state.togglecheese === "extramozarella"?"block":null, position:'absolute', zIndex: '200', height: '400px', width: '400px', top:'375px', left: '130px'}} src={Extramozarella} alt="extramozarella"/>
+                        <img style={{display: this.state.togglecheese === "extramozarella"?"block":null, position:'absolute', zIndex: '200', height: '400px', width: '400px', top:'0', left: '0'}} src={Extramozarella} alt="extramozarella"/>
                       </div>
                       <div>
-                        <img  style={{display: this.state.togglecheese === "somuchmozz"?"block":null, position:'absolute', zIndex: '200', height: '400px', width: '400px', top:'375px', left: '130px'}}src={soMuchMozz} alt="somuchmozz"/>
+                        <img  style={{display: this.state.togglecheese === "somuchmozz"?"block":null, position:'absolute', zIndex: '200', height: '400px', width: '400px', top:'0', left: '0'}}src={soMuchMozz} alt="somuchmozz"/>
                       </div>
                       <div>
-                        <img style={{display: this.state.togglecheese === "parmesan"?"block":null, position:'absolute', zIndex: '200', height: '400px', width: '400px', top:'375px', left: '130px'}} src={Parmesan} alt="parmesan"/>
+                        <img style={{display: this.state.togglecheese === "parmesan"?"block":null, position:'absolute', zIndex: '200', height: '400px', width: '400px', top:'0', left: '0'}} src={Parmesan} alt="parmesan"/>
                       </div>
                       <div>
-                        <img style={{display: this.state.togglecheese === "cheddarcheese"?"block":null, position:'absolute', zIndex: '200', height: '400px', width: '400px', top:'375px', left: '130px'}}   src={Cheddarcheese} alt="cheddarcheese"/>
+                        <img style={{display: this.state.togglecheese === "cheddarcheese"?"block":null, position:'absolute', zIndex: '200', height: '400px', width: '400px', top:'0', left: '0'}}   src={Cheddarcheese} alt="cheddarcheese"/>
                       </div>
                       <div>
-                        <img style={{display: this.state.togglecheese === "extracheddar"?"block":null, position:'absolute', zIndex: '200', height: '400px', width: '400px', top:'375px', left: '130px'}}  src={Extracheddar} alt="extracheddar"/>
+                        <img style={{display: this.state.togglecheese === "extracheddar"?"block":null, position:'absolute', zIndex: '200', height: '400px', width: '400px', top:'0', left: '0'}}  src={Extracheddar} alt="extracheddar"/>
                       </div>
                      </div>
                      <div className={styles.Toppings}>
                      <div>
-                       <img style={{display: this.state.checked['pepperoni'] ? "block":null, position:'absolute', zIndex: '300', height: '400px', width: '400px', top:'375px', left: '130px'}} src={Pepperoni} alt="pepperoni"/>
+                       <img style={{display: this.state.checked['pepperoni'] ? "block":null, position:'absolute', zIndex: '300', height: '400px', width: '400px',top:'0', left: '0'}} src={Pepperoni} alt="pepperoni"/>
                      </div>
                      <div>
-                       <img style={{display: this.state.checked['sausage'] ? "block":null, position:'absolute', zIndex: '300', height: '400px', width: '400px', top:'375px', left: '130px'}}  src={Sausage} alt="sausage"/>
+                       <img style={{display: this.state.checked['sausage'] ? "block":null, position:'absolute', zIndex: '300', height: '400px', width: '400px', top:'0', left: '0'}}  src={Sausage} alt="sausage"/>
                      </div>
                      <div>
-                       <img style={{display: this.state.checked['pineapple'] ? "block":null, position:'absolute', zIndex: '300', height: '400px', width: '400px', top:'375px', left: '130px'}}  src={Pineapple} alt="pineapple"/>
+                       <img style={{display: this.state.checked['pineapple'] ? "block":null, position:'absolute', zIndex: '300', height: '400px', width: '400px', top:'0', left: '0'}}  src={Pineapple} alt="pineapple"/>
                      </div>
                      <div>
-                       <img style={{display: this.state.checked['peppers'] ? "block":null, position:'absolute', zIndex: '300', height: '400px', width: '400px', top:'375px', left: '130px'}}  src={Peppers} alt="peppers"/>
+                       <img style={{display: this.state.checked['peppers'] ? "block":null, position:'absolute', zIndex: '300', height: '400px', width: '400px', top:'0', left: '0'}}  src={Peppers} alt="peppers"/>
                      </div>
                      <div>
-                       <img  style={{display: this.state.checked['onions'] ? "block":null, position:'absolute', zIndex: '300', height: '400px', width: '400px', top:'375px', left: '130px'}} src={Onions} alt="onions"/>
+                       <img  style={{display: this.state.checked['onions'] ? "block":null, position:'absolute', zIndex: '300', height: '400px', width: '400px', top:'0', left: '0'}} src={Onions} alt="onions"/>
                      </div>
                      <div>
-                       <img style={{display: this.state.checked['tomatoes'] ? "block":null, position:'absolute', zIndex: '300', height: '400px', width: '400px', top:'375px', left: '130px'}}  src={Tomatoes} alt="tomatoes"/>
+                       <img style={{display: this.state.checked['tomatoes'] ? "block":null, position:'absolute', zIndex: '300', height: '400px', width: '400px', top:'0', left: '0'}}  src={Tomatoes} alt="tomatoes"/>
                      </div>
                      <div>
-                       <img style={{display: this.state.checked['spinach'] ? "block":null, position:'absolute', zIndex: '300', height: '400px', width: '400px', top:'375px', left: '130px'}}  src={Spinach} alt="spinach"/>
+                       <img style={{display: this.state.checked['spinach'] ? "block":null, position:'absolute', zIndex: '300', height: '400px', width: '400px', top:'0', left: '0'}}  src={Spinach} alt="spinach"/>
                      </div>
                      <div>
-                       <img style={{display: this.state.checked['mushrooms'] ? "block":null, position:'absolute', zIndex: '300', height: '400px', width: '400px', top:'375px', left: '130px'}}  src={Mushrooms} alt = "Mushrooms"/>
+                       <img style={{display: this.state.checked['mushrooms'] ? "block":null, position:'absolute', zIndex: '300', height: '400px', width: '400px', top:'0', left: '0'}}  src={Mushrooms} alt = "Mushrooms"/>
                      </div>
                      <div>
-                       <img  style={{display: this.state.checked['mushrooms'] ? "block":null, position:'absolute', zIndex: '300', height: '400px', width: '400px', top:'375px', left: '130px'}} src={Blackolives} alt="blackolives"/>
+                       <img  style={{display: this.state.checked['mushrooms'] ? "block":null, position:'absolute', zIndex: '300', height: '400px', width: '400px', top:'0', left: '0'}} src={Blackolives} alt="blackolives"/>
                      </div>
                      <div>
-                       <img style={{display: this.state.checked['ham'] ? "block":null, position:'absolute', zIndex: '300', height: '400px', width: '400px', top:'375px', left: '130px'}}  src={Ham} alt="ham"/>
+                       <img style={{display: this.state.checked['ham'] ? "block":null, position:'absolute', zIndex: '300', height: '400px', width: '400px', top:'0', left: '0'}}  src={Ham} alt="ham"/>
                      </div>
                      <div>
-                       <img style={{display: this.state.checked['bacon'] ? "block":null, position:'absolute', zIndex: '300', height: '400px', width: '400px', top:'375px', left: '130px'}}  src={Bacon} alt="bacon"/>
+                       <img style={{display: this.state.checked['bacon'] ? "block":null, position:'absolute', zIndex: '300', height: '400px', width: '400px', top:'0', left: '0'}}  src={Bacon} alt="bacon"/>
                      </div>
                      <div>
-                       <img style={{display: this.state.checked['chicken'] ? "block":null, position:'absolute', zIndex: '300', height: '400px', width: '400px', top:'375px', left: '130px'}}  src={Chicken} alt = "chicken"/>
+                       <img style={{display: this.state.checked['chicken'] ? "block":null, position:'absolute', zIndex: '300', height: '400px', width: '400px', top:'0', left: '0'}}  src={Chicken} alt = "chicken"/>
                      </div>
                   </div>
                  </div> 
                  </div>
                  <div className={styles.Input}>
                    <div>
-                     <h1>Sauce</h1>
+                     <h1 style={{color: 'black'}}>Sauce</h1>
                      <div className={styles.InputSauce}>
                        <div>
                         <input type="radio" name="sauce" id="Marinara" value = "Marinara"
@@ -158,7 +161,7 @@ class PizzaBuilder extends Component {
                      </div>
                    </div> 
                    <div>
-                     <h1>Cheese</h1>
+                     <h1 style={{color: 'black'}}>Cheese</h1>
                      <div className={styles.InputCheese}>
                        <div>
                         <input type="radio" name="cheese" id="mozzarella" value = "mozzarella"
@@ -199,7 +202,7 @@ class PizzaBuilder extends Component {
                      </div>
                    </div>
                    <div>
-                    <h1>Toppings</h1>
+                    <h1 style={{color: 'black'}}>Toppings</h1>
                     <div className={styles.InputToppings}>
                       <div>
                        <input type="checkbox" name="pepperoni"  id="pepperoni" value = "pepperoni"
@@ -289,10 +292,12 @@ class PizzaBuilder extends Component {
                   </div>
                  </div>  
                </div>
+               <button>ORDER NOW</button>
              </div>
-        </section>
-    )
-  }
+          <Footer/>
+        </div>
+      </Aux>
+    )}
 }
 
 export default PizzaBuilder;
