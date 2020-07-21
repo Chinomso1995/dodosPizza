@@ -26,7 +26,7 @@ import Chicken from '../assets/Pizzabuilder/chicken.png';
 
 class PizzaBuilder extends Component {
   state={
-    checked: false
+    checked: {}
   }
   toggleSauceHandler =(saucetype) => ()=>{
     this.setState({toggle: saucetype});
@@ -34,8 +34,10 @@ class PizzaBuilder extends Component {
   toggleCheeseHandler = (cheesetype)=> ()=>{
     this.setState({togglecheese: cheesetype});
   }
-  handleCheckClick = ()=>{
-    this.setState({checked: !this.state.checked})
+  handleCheckClick = (e)=>{
+    let map = {...this.state.checked};
+    map[e.target.name] = map[e.target.name] ? !map[e.target.name]:true
+    this.setState({checked: map})
   }
   
   render (){
@@ -87,40 +89,40 @@ class PizzaBuilder extends Component {
                      </div>
                      <div className={styles.Toppings}>
                      <div>
-                       <img style={{display: this.state.checked?"block":null, position:'absolute', zIndex: '300', height: '400px', width: '400px', top:'375px', left: '130px'}} src={Pepperoni} alt="pepperoni"/>
+                       <img style={{display: this.state.checked['pepperoni'] ? "block":null, position:'absolute', zIndex: '300', height: '400px', width: '400px', top:'375px', left: '130px'}} src={Pepperoni} alt="pepperoni"/>
                      </div>
                      <div>
-                       <img src={Sausage} alt="sausage"/>
+                       <img style={{display: this.state.checked['sausage'] ? "block":null, position:'absolute', zIndex: '300', height: '400px', width: '400px', top:'375px', left: '130px'}}  src={Sausage} alt="sausage"/>
                      </div>
                      <div>
-                       <img src={Pineapple} alt="pineapple"/>
+                       <img style={{display: this.state.checked['pineapple'] ? "block":null, position:'absolute', zIndex: '300', height: '400px', width: '400px', top:'375px', left: '130px'}}  src={Pineapple} alt="pineapple"/>
                      </div>
                      <div>
-                       <img src={Peppers} alt="peppers"/>
+                       <img style={{display: this.state.checked['peppers'] ? "block":null, position:'absolute', zIndex: '300', height: '400px', width: '400px', top:'375px', left: '130px'}}  src={Peppers} alt="peppers"/>
                      </div>
                      <div>
-                       <img src={Onions} alt="onions"/>
+                       <img  style={{display: this.state.checked['onions'] ? "block":null, position:'absolute', zIndex: '300', height: '400px', width: '400px', top:'375px', left: '130px'}} src={Onions} alt="onions"/>
                      </div>
                      <div>
-                       <img src={Tomatoes} alt="tomatoes"/>
+                       <img style={{display: this.state.checked['tomatoes'] ? "block":null, position:'absolute', zIndex: '300', height: '400px', width: '400px', top:'375px', left: '130px'}}  src={Tomatoes} alt="tomatoes"/>
                      </div>
                      <div>
-                       <img src={Spinach} alt="spinach"/>
+                       <img style={{display: this.state.checked['spinach'] ? "block":null, position:'absolute', zIndex: '300', height: '400px', width: '400px', top:'375px', left: '130px'}}  src={Spinach} alt="spinach"/>
                      </div>
                      <div>
-                       <img src={Mushrooms} alt = "Mushrooms"/>
+                       <img style={{display: this.state.checked['mushrooms'] ? "block":null, position:'absolute', zIndex: '300', height: '400px', width: '400px', top:'375px', left: '130px'}}  src={Mushrooms} alt = "Mushrooms"/>
                      </div>
                      <div>
-                       <img src={Blackolives} alt="blackolives"/>
+                       <img  style={{display: this.state.checked['mushrooms'] ? "block":null, position:'absolute', zIndex: '300', height: '400px', width: '400px', top:'375px', left: '130px'}} src={Blackolives} alt="blackolives"/>
                      </div>
                      <div>
-                       <img src={Ham} alt="ham"/>
+                       <img style={{display: this.state.checked['ham'] ? "block":null, position:'absolute', zIndex: '300', height: '400px', width: '400px', top:'375px', left: '130px'}}  src={Ham} alt="ham"/>
                      </div>
                      <div>
-                       <img src={Bacon} alt="bacon"/>
+                       <img style={{display: this.state.checked['bacon'] ? "block":null, position:'absolute', zIndex: '300', height: '400px', width: '400px', top:'375px', left: '130px'}}  src={Bacon} alt="bacon"/>
                      </div>
                      <div>
-                       <img src={Chicken} alt = "chicken"/>
+                       <img style={{display: this.state.checked['chicken'] ? "block":null, position:'absolute', zIndex: '300', height: '400px', width: '400px', top:'375px', left: '130px'}}  src={Chicken} alt = "chicken"/>
                      </div>
                   </div>
                  </div> 
@@ -202,84 +204,84 @@ class PizzaBuilder extends Component {
                       <div>
                        <input type="checkbox" name="pepperoni"  id="pepperoni" value = "pepperoni"
                        onChange={this.handleCheckClick}
-                       checked={this.state.checked}
+                       checked={this.state.checked['pepperoni']}
                        />
                        <label for="pepperoni">Pepperoni</label>
                       </div>
                       <div>
                        <input type="checkbox" name ="sausage" id="sausage" value="sausage"
                         onChange={this.handleCheckClick}
-                        checked={this.state.checked}
+                        checked={this.state.checked['sausage']}
                       />
                        <label for = "sausage">Sausage</label>
                       </div>
                       <div>
                        <input type="checkbox" name ="pineapple" id="pineapple" value="pineapple"
                        onChange={this.handleCheckClick}
-                       checked={this.state.checked}
+                       checked={this.state.checked['pineapple']}
                        />
                        <label for = "pineapple">Pineapple</label>
                       </div>
                       <div>
                        <input type="checkbox" name ="peppers" id="peppers" value="peppers"
                         onChange={this.handleCheckClick}
-                        checked={this.state.checked}
+                        checked={this.state.checked['peppers']}
                        />
                        <label for = "peppers">Peppers</label>
                       </div>
                       <div>
                        <input type="checkbox" name ="onions" id="onions" value="onions"
                         onChange={this.handleCheckClick}
-                        checked={this.state.checked}
+                        checked={this.state.checked['onions']}
                        />
                        <label for = "onions">Onions</label>
                       </div>
                       <div>
                        <input type="checkbox" name ="tomatoes" id="tomatoes" value="tomatoes"
                        onChange={this.handleCheckClick}
-                       checked={this.state.checked}
+                       checked={this.state.checked['tomatoes']}
                       />
                        <label for = "tomatoes">Tomatoes</label>
                       </div>
                       <div>
                        <input type="checkbox" name ="spinach" id="spinach" value="spinach"
                         onChange={this.handleCheckClick}
-                        checked={this.state.checked}
+                        checked={this.state.checked['spinach']}
                        />
                        <label for = "spinach">Spinach</label>
                       </div>
                       <div>
                        <input type="checkbox" name ="mushrooms" id="mushrooms" value="mushrooms"
                         onChange={this.handleCheckClick}
-                        checked={this.state.checked}
+                        checked={this.state.checked['mushrooms']}
                        />
                        <label for = "mushrooms">Mushrooms</label>
                       </div>
                       <div>
                        <input type="checkbox" name ="blackolives" id="blackolives" value="blackolives"
                         onChange={this.handleCheckClick}
-                        checked={this.state.checked}
+                        checked={this.state.checked['blackolives']}
                        />
                        <label for = "blackolives">Black Olives</label>
                       </div>
                       <div>
                        <input type="checkbox" name ="ham" id="ham" value="ham"
                         onChange={this.handleCheckClick}
-                        checked={this.state.checked}
+                        checked={this.state.checked['ham']}
                        />
                        <label for = "ham">Ham</label>
                       </div>
                       <div>
                        <input type="checkbox" name ="bacon" id="bacon" value="bacon"
                        onChange={this.handleCheckClick}
-                       checked={this.state.checked}
+                       checked={this.state.checked['bacon']}
                       />
                        <label for = "bacon">Bacon</label>
                       </div> 
                       <div>
                        <input type="checkbox" name ="chicken" id="chicken" value="chicken"
                         onChange={this.handleCheckClick}
-                       checked={this.state.checked}
+                       checked={this.state.checked['chicken']}
                        />
                        <label for = "chicken">Chicken</label>
                       </div>   
