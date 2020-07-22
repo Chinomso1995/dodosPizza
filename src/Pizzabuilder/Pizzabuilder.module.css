@@ -102,3 +102,62 @@ button{
   font-size: 1rem;
   padding-bottom: 50px;
 }
+@media (max-width: 500px){
+  .PizzaBuilderHeading p{
+    width: 80%;
+    font-size: 0.9rem;
+  }
+  .Pizza{
+    flex-direction: column;
+  }
+  .Pizzapan {
+    width: 200px;
+    height: 200px;
+    position: relative;
+  }
+  .Pizzapanimage{
+    width: 200px;
+    height: 200px;
+    position: relative;
+  }
+  .InputSauce{
+    display: none;
+  }
+  .InputCheese{
+    display: none;
+  }
+  .InputToppings{
+   display: none;
+  }
+  .Navbar{
+    cursor: pointer;
+    transition: transform 500ms;
+  }
+  .SauceOpen{
+    transform: rotate(45deg);
+  }
+  .CheeseOpen{
+    transform: rotate(45deg);
+  }
+  .ToppingsOpen{
+    transform: rotate(45deg);
+  }
+  .Navbar div{
+    height: 3px;
+    width: 25px;
+    background-color: red;
+    margin: 5px;
+  }
+  .Navbar div:first-of-type{
+    transform: rotate(90deg);
+  }
+  .Navbar div:last-of-type{
+    transform: translateY(-8px);
+  }
+  .InputHeading{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+  }
+}

@@ -4,17 +4,19 @@ import Homepage from './homepage/homepage';
 import Pizzabuilder from './Pizzabuilder/Pizzabuilder'
 import Aux from './hoc/Auxillary/Auxillary'
 import PizzaBuilder from './Pizzabuilder/Pizzabuilder';
-
+import Radium, {StyleRoot} from 'radium';
 
 
 class App extends Component{
   render(){
     return (
     <Aux>
-      <PizzaBuilder/>
+      <StyleRoot>
+       <PizzaBuilder/>
+      </StyleRoot>
     </Aux>
     )
   }
 }
 
-export default App;
+export default Radium(App);
