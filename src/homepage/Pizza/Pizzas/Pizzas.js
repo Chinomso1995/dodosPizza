@@ -69,7 +69,7 @@ class pizzas extends Component {
      key={this.state.pizzas.id}       
      />: null}
     
-     <div className={styles.Pizza}>
+     <div className={styles.Pizza} id="pizza">
              <h1>Pizza</h1>
       <div className={styles.PizzaContainer}>
          {pizza.map(p=>{

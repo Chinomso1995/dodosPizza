@@ -25,7 +25,7 @@ import cappucino from '../../assets/drinks/cappucino.jpeg';
 
 const drinks = (props) => {
   return(
-    <div className={styles.Drinks}>
+    <div className={styles.Drinks} id="drinks">
       <h1>Drinks</h1>
       <div className={styles.DrinksContainer}>
         <div className={styles.DrinksCard}>

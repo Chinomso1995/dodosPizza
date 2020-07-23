@@ -17,7 +17,7 @@ import chickenStripsTwo from '../../assets/sides/chickenstripstwo.jpeg';
 
 const slides = (props)=> {
   return(
-    <div className={styles.Sides}>
+    <div className={styles.Sides} id='sides'>
       <h1>Sides</h1>
       <div className={styles.SidesContainer}>
         <div className={styles.SidesCard}>

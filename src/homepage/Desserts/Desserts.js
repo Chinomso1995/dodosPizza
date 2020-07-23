@@ -9,7 +9,7 @@ import iceCreamChocolate from '../../assets/desserts/chocolateicecream.jpeg';
 
 const desserts = (props) => {
   return (
-     <div className={styles.Desserts}>
+     <div className={styles.Desserts} id="desserts">
        <h1>Desserts</h1>
        <div className={styles.DessertsContainer}>
          <div className={styles.DessertsCard}>
