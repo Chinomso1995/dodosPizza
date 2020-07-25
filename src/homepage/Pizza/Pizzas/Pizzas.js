@@ -21,7 +21,7 @@ import veggieOverload from '../../../assets/veggieoverload.jpg';
 import Modal from './PizzaModal/Pizzamodal';
 import Aux from '../../../hoc/Auxillary/Auxillary';
 import Backdrop from '../../../Components/Backdrop/Backdrop'
-
+import axios from '../../../axios-orders';
 class pizzas extends Component {
   state ={
     pizzas: [
@@ -51,6 +51,15 @@ class pizzas extends Component {
     this.setState({showModal: !this.state.showModal, selectedPizza: p});
     
   }
+  sendingRequestHandler=()=>{
+    const pizzaOrder = {
+         name: this.state.pizzas.name,
+         ingredients: this.state.pizzas.ingredients,
+         prize: this.state.pizzas.price
+    }
+    axios.post('/pizzas.json', pizzaOrder)
+         .then(response=> console.log(response))
+  }
   render(){
   const pizza = this.state.pizzas;
   
@@ -62,6 +71,7 @@ class pizzas extends Component {
     
      <Modal 
      clicked={this.toggleModalHandler}
+     sendRequest={this.sendingRequestHandler}
      ingredients={this.state.selectedPizza.ingredients} 
      price={this.state.selectedPizza.price} 
      image={this.state.selectedPizza.image} 

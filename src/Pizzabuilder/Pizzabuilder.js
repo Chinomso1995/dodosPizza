@@ -26,6 +26,7 @@ import Chicken from '../assets/Pizzabuilder/chicken.png';
 import Footer from '../homepage/Footer/Footer';
 import Aux from '../hoc/Auxillary/Auxillary';
 import Radium from 'radium';
+import axios from '../axios-orders';
 
 class PizzaBuilder extends Component {
   state={
@@ -53,6 +54,11 @@ class PizzaBuilder extends Component {
   }
   toggleToppingsIngredientsHandler = ()=>{
     this.setState({showToppingsIngredients: !this.state.showToppingsIngredients})
+  }
+  sendingRequestHandler=()=>{
+    const order = this.state.checked
+    axios.post('/customorders.json', order)
+         .then(response=> console.log(response))
   }
   render (){
     let sauceNavbarClasses = [styles.Navbar];
@@ -558,7 +564,7 @@ class PizzaBuilder extends Component {
                   </div>
                  </div>  
                </div>
-               <button>ORDER NOW</button>
+               <button onClick={this.sendingRequestHandler}>ORDER NOW</button>
              </div>
           <Footer/>
         </div>

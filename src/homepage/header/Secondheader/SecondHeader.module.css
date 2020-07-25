@@ -36,6 +36,10 @@
   color: white;
   border: 0;
 }
+.secondHeaderContainer button a{
+  color: white;
+  text-decoration: none;
+}
 @media (max-width: 500px){
   .secondHeaderContainer{
     padding-bottom: 2px;

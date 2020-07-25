@@ -22,7 +22,7 @@ const secondHeader = (props) => {
      </ul>  
     </div> 
     <div>
-      <button>My Orders</button>
+      <button><NavLink2 to="/orders">My Orders</NavLink2></button>
     </div>
    </div>
   </Aux>

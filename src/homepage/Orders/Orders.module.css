@@ -1,0 +1,134 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100&display=swap");
+.OrderHeader div:first-of-type{
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  margin-left: 140px;
+  margin-top: 30px;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+.OrderHeader div:first-of-type img{
+  height: 50px;
+  width: 50px;
+}
+.OrderHeader div:first-of-type h1{
+  padding-left: 20px;
+}
+.OrderContentContainerHeader{
+  font-size: 2rem;
+  font-family: 'Noto Sans JP', sans-serif;
+  margin-top: 90px;
+  margin-left: 140px;
+}
+.OrderContentContainer{
+  margin-top: 70px;
+  max-width: 70%;
+  margin: auto;
+}
+.OrderContent{
+  display: flex;
+  justify-content: space-between;
+  max-width: 60%;
+  margin: 50px auto 5px auto;
+}
+.OrderContent div:first-of-type{
+  display: flex;
+  align-items: center;
+}
+
+.OrderContent img{
+  width: 50px;
+  height: 50px;
+  
+}
+.OrderContent h1{
+  font-size: 1.4rem;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 900;
+
+}
+.OrderContent p{
+  width: 50%;
+  max-width: 55%;
+  
+}
+.OrderContentPrice{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+.OrderContentPrice div:first-of-type{
+  padding-right: 40px;
+}
+.OrderPlacement{
+  width: 60%;
+  max-width: 70%;
+  margin: 70px auto 10px auto;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+.OrderPlacement h1{
+  font-size: 1.2rem;
+}
+.OrderPlacement h1:last-of-type{
+  color: #F3710C;
+  text-align: right;
+  margin-top: 60px;
+  
+}
+.ButtonContainer{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 80px;
+}
+.ButtonContainer button:last-of-type{
+  background-color: #F3710C;
+  color: white;
+}
+@media(max-width: 500px){
+  .OrderHeader div:first-of-type{
+    margin-left: 30px;
+  }
+  .OrderHeader div:first-of-type img{
+    width: 40px;
+    height: 40px;
+  }
+  .OrderContentContainerHeader{
+    text-align: center;
+    margin: 40px 0 0 0;
+    max-width: 100%;
+  }
+  .OrderContentContainer{
+    overflow-x: hidden;
+    max-width: 100%;
+    margin: 0;
+  }
+  .OrderContent{
+    flex-direction: column;
+    max-width: 100%;
+    margin: 50px 0 0 20px;
+  }
+  .OrderContent p{
+    width: 70%;
+    max-width: 100%;
+    
+  }
+  .OrderContentPrice{
+    margin-top: 30px;
+    justify-content: space-between;
+  }
+  .OrderPlacement{
+    width: 100%;
+    max-width: 100%;
+    margin: 50px 0 0 20px;
+  }
+  .OrderPlacement h1:last-of-type{
+    text-align: left;
+  }
+  .ButtonContainer button{
+    height: 50px;
+    width: 100px;
+  }
+}
