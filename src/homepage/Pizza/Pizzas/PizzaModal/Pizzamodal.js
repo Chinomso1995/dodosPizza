@@ -1,20 +1,25 @@
 import React, {Component} from 'react';
 import styles from '../PizzaModal/Pizzamodal.module.css';
+import Aux from '../../../../hoc/Auxillary/Auxillary'
 
 
 class pizzaModal extends Component {
   state = {
     selected: "small",
-    showModal: true
+    showModal: true,
+    selectedOrder: null
   }
   toggleHandler = (size)=> ()=>{
     this.setState({
 			toggle: size
 		});
   }
-  removeModalHandler = ()=>{
-    this.setState({showModal: false})
+  addToOrders = (p)=>{
+    this.setState(prevState=>({
+      selectedOrder: p
+    }))
   }
+  
   render (){
     let attachedClasses = [styles.ImageContainer]
     if(this.state.toggle==='small'){
@@ -27,6 +32,7 @@ class pizzaModal extends Component {
       attachedClasses=[styles.ImageContainer, styles.Large]
     }
     return (
+      <Aux>
         <div className={styles.Pizzamodal}>
           <div className={styles.ModalContainer}>
             <div className={attachedClasses.join(' ')}>
@@ -53,7 +59,7 @@ class pizzaModal extends Component {
                 </form>
                 </div>
                 <div className={styles.orderButton}>
-                  <button onClick={this.props.sendRequest}>Add to basket for ₦{this.props.price}</button>
+                  <button onClick={this.props.addToOrders}>Add to basket for ₦{this.props.price}</button>
                 </div>
               </div>
               </div>
@@ -65,6 +71,7 @@ class pizzaModal extends Component {
           </div>
          
       </div>
+      </Aux>
     )
   }
 }

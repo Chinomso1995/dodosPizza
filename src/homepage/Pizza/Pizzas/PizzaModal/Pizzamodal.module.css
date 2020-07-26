@@ -90,6 +90,7 @@
   border-radius: 10px;
   color: white;
   font-family: 'Roboto', sans-serif;
+  cursor: pointer;
 }
 .Small{
   transform: scale(0.8);

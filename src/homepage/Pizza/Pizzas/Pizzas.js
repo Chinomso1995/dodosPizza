@@ -20,8 +20,8 @@ import hawaiian from '../../../assets/hawaiin.jpg';
 import veggieOverload from '../../../assets/veggieoverload.jpg';
 import Modal from './PizzaModal/Pizzamodal';
 import Aux from '../../../hoc/Auxillary/Auxillary';
-import Backdrop from '../../../Components/Backdrop/Backdrop'
-import axios from '../../../axios-orders';
+import Backdrop from '../../../Components/Backdrop/Backdrop';
+import Orders from '../../Orders/Orders'
 class pizzas extends Component {
   state ={
     pizzas: [
@@ -45,20 +45,18 @@ class pizzas extends Component {
       {id:18, name: 'Veggie Overload', ingredients: 'Mushrooms, bell peppers, corn, olives, red onions, tomatoes, mozzarella, tomato sauce', price: '3100', image: veggieOverload }
     ],
     showModal: false,
-    selectedPizza: null
+    selectedPizza: null,
+    orders: []
+    
   }
   toggleModalHandler = (p)=>{
     this.setState({showModal: !this.state.showModal, selectedPizza: p});
     
   }
-  sendingRequestHandler=()=>{
-    const pizzaOrder = {
-         name: this.state.pizzas.name,
-         ingredients: this.state.pizzas.ingredients,
-         prize: this.state.pizzas.price
-    }
-    axios.post('/pizzas.json', pizzaOrder)
-         .then(response=> console.log(response))
+  addToOrders = (productName, productIngredients, productPrice, productImage, p)=>{
+    this.setState(prevState=>({
+      orders: [...prevState.orders, productImage, productName, productIngredients, productPrice]
+    }))
   }
   render(){
   const pizza = this.state.pizzas;
@@ -77,8 +75,7 @@ class pizzas extends Component {
      image={this.state.selectedPizza.image} 
      name={this.state.selectedPizza.name} 
      key={this.state.pizzas.id}       
-     />: null}
-    
+     addToOrders={this.addToOrders}/>: null}
      <div className={styles.Pizza} id="pizza">
              <h1>Pizza</h1>
       <div className={styles.PizzaContainer}>

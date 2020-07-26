@@ -7,6 +7,7 @@ import Drinks from '../../assets/drinks/fantaone.jpg';
 import Styles from '../Orders/Orders.module.css';
 import Footer from '../../homepage/Footer/Footer'
 const orders = (props)=>{
+  console.log(props.pizzaIngredients)
   return(
     <div>
        <div className={Styles.OrderHeader}>
@@ -20,16 +21,16 @@ const orders = (props)=>{
           <div className={Styles.OrderContent}>
             <div>
                <div style={{paddingRight: '80px'}}>
-                 <img src={Pizza} alt="pizza"/>
+                 <img src={props.pizzaImage} alt="pizza"/>
                </div>
                <div>
-                 <h1>Pepperoni Fresh</h1>
-                 <p>Pepperoni, mozzarella, green peppers, pizza sauce</p>
+                 <h1>{props.pizzaName}</h1>
+                 <p>{props.pizzaIngredients}</p>
                </div>
             </div>
             <div className={Styles.OrderContentPrice}>
                <div><span>1</span></div>
-               <div><span>₦2,700</span></div>
+               <div><span>₦{props.pizzaPrice}</span></div>
             </div>
           </div>
           <div className={Styles.OrderContent}>
