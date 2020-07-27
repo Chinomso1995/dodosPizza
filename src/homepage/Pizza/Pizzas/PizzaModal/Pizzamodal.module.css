@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100&display=swap");
 *{
   margin: 0;
   padding: 0;
@@ -12,6 +13,7 @@
   height: 610px;
   background-color: white;
   border-radius: 20px;
+  font-family: 'Noto Sans JP', sans-serif;
 }
 .ModalContainer{
   display: flex;

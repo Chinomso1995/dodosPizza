@@ -4,11 +4,16 @@ import './index.css';
 import App from './App';
 import {BrowserRouter} from 'react-router-dom';
 import * as serviceWorker from './serviceWorker';
-
+import CartContextProvider from './Context/OrderContext'
+import ProductsContextProvider from './Context/ProductContext'
 const app = (
-  <BrowserRouter>
-    <App/>
-  </BrowserRouter>
+  <ProductsContextProvider>
+   <CartContextProvider>
+     <BrowserRouter>
+      <App/>
+     </BrowserRouter>
+   </CartContextProvider>
+  </ProductsContextProvider>
 )
 
 ReactDOM.render(

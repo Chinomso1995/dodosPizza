@@ -8,8 +8,8 @@ import {Route, Switch} from 'react-router-dom';
 import Pizzas from './homepage/Pizza/Pizzas/Pizzas';
 import Sides from './homepage/Sides/Sides';
 import Desserts from './homepage/Desserts/Desserts';
-import Drinks from './homepage/Drinks/Drinks'
-import Orders from './homepage/Orders/Orders'
+import Drinks from './homepage/Drinks/Drinks';
+import Orders from './homepage/Orders/Orders';
 
 class App extends Component{
   render(){

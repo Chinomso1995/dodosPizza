@@ -1,13 +1,13 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import Logo from '../../assets/logo.png';
 import Pizza from '../../assets/pepperoni.jpg';
 import Sides from '../../assets/sides/sausagerollone.jpeg';
 import Desserts from '../../assets/desserts/vanillaicecream.jpeg';
 import Drinks from '../../assets/drinks/fantaone.jpg';
 import Styles from '../Orders/Orders.module.css';
-import Footer from '../../homepage/Footer/Footer'
-const orders = (props)=>{
-  console.log(props.pizzaIngredients)
+import Footer from '../../homepage/Footer/Footer';
+
+const Orders = (props)=>{
   return(
     <div>
        <div className={Styles.OrderHeader}>
@@ -21,16 +21,16 @@ const orders = (props)=>{
           <div className={Styles.OrderContent}>
             <div>
                <div style={{paddingRight: '80px'}}>
-                 <img src={props.pizzaImage} alt="pizza"/>
+                 <img  alt="pizza"/>
                </div>
                <div>
-                 <h1>{props.pizzaName}</h1>
-                 <p>{props.pizzaIngredients}</p>
+                 <h1>{}</h1>
+                 <p>{}</p>
                </div>
             </div>
             <div className={Styles.OrderContentPrice}>
                <div><span>1</span></div>
-               <div><span>₦{props.pizzaPrice}</span></div>
+               <div><span>₦{}</span></div>
             </div>
           </div>
           <div className={Styles.OrderContent}>
@@ -95,4 +95,4 @@ const orders = (props)=>{
     </div>
   )
 }
-export default orders;
+export default Orders;
