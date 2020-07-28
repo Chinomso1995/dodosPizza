@@ -1,8 +1,13 @@
 import React, {useContext} from 'react';
 import styles from '../Desserts/Desserts.module.css';
-import {ProductsContext } from '../../Context/ProductContext'
+import {ProductsContext } from '../../Context/ProductContext';
+import {CartContext} from '../../Context/OrderContext';
 const Desserts = () => {
-  const {dessertproducts} = useContext(ProductsContext)
+  const {dessertproducts} = useContext(ProductsContext);
+  const {addProduct, cartItems, increase} = useContext(CartContext);
+  const isInCart = dessertproducts => {
+    return !!cartItems.find(item => item.id === dessertproducts.id);
+}
   return (
      <div className={styles.Desserts} id="desserts">
        <h1>Desserts</h1>
@@ -16,7 +21,13 @@ const Desserts = () => {
                          </div>
                          <div>
                            <h3>₦{dessert.price}</h3>
-                           <button>Add to basket</button>
+                           {
+                             isInCart(dessert) && 
+                             <button 
+                             onClick={() => increase(dessert)}>Add more</button>
+                            }
+                         { !isInCart(dessert) &&
+                         <button onClick={()=>addProduct(dessert)}>Add to basket</button>}
                          </div>
                       </div>
              })}

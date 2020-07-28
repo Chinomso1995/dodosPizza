@@ -1,11 +1,14 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styles from '../Backdrop/Backdrop.module.css'
-
-const backdrop = (props) =>{
+import Aux from '../../hoc/Auxillary/Auxillary'
+const Backdrop = (props) =>{
+ 
   return(
-    <div className={styles.Backdrop} onClick={props.clicked}>
-
+    <Aux>
+      <div className={styles.Backdrop} onClick={props.clicked}>
+      
     </div>
+    </Aux>
   )
 }
-export default backdrop;
+export default Backdrop;

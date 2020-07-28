@@ -1,16 +1,19 @@
 import React, {useState, useContext} from 'react';
 import styles from '../PizzaModal/Pizzamodal.module.css';
-import Aux from '../../../../hoc/Auxillary/Auxillary'
+import Aux from '../../../../hoc/Auxillary/Auxillary';
+import {CartContext} from '../../../../Context/OrderContext'
 
-
-export const PizzaProducts = (props) => [{id: props.key, name: props.name, ingredients: props.ingredients, price: props.price, image: props.image}]
 const PizzaModal = (props) => {
-  const [selected, setSelected] = useState('small')
+  const [selected, setSelected] = useState('small');
+  const {cartItems} = useContext(CartContext);
   
+  const isInCart = props => {
+    return !!cartItems.find(item => item.id === props.id);
+  }
   const toggleHandler = (event) => {
     setSelected(event.target.value);
   }
-  
+
   let attachedClasses = [styles.ImageContainer]
   if (selected === 'small') {
     attachedClasses = [styles.ImageContainer, styles.Small]
@@ -23,7 +26,7 @@ const PizzaModal = (props) => {
   }
   return (
     <Aux>
-      <div className={styles.Pizzamodal}>
+        <div className={styles.Pizzamodal}>
         <div className={styles.ModalContainer}>
           <div className={attachedClasses.join(' ')}>
             <img  src={props.image} alt="pizzapicture"/>
@@ -46,7 +49,12 @@ const PizzaModal = (props) => {
               </form>
               </div>
               <div className={styles.orderButton}>
-                <button>Add to basket for ₦{props.price}</button>
+              { isInCart(props) && 
+                <button 
+                onClick={props.increaseProduct}>Add more</button>
+              }
+              { !isInCart(props) &&
+                <button onClick={props.addProduct}>Add to basket for ₦{props.price}</button>}
               </div>
             </div>
             </div>

@@ -4,28 +4,35 @@ import styles from '../Pizzas/Pizzas.module.css';
 import Modal from './PizzaModal/Pizzamodal';
 import Aux from '../../../hoc/Auxillary/Auxillary';
 import Backdrop from '../../../Components/Backdrop/Backdrop';
-import {ProductsContext} from '../../../Context/ProductContext'
+import {ProductsContext} from '../../../Context/ProductContext';
+import {CartContext} from '../../../Context/OrderContext';
 const Pizzas =()=> {
 
     const [showModal, setModal] = useState(false);
     const [selectedPizza, setSelectedPizza] = useState(null)
-    const {pizzaproducts} =  useContext(ProductsContext)
+    const {pizzaproducts} =  useContext(ProductsContext);
+    const {addProduct, increase} = useContext(CartContext);
     const toggleModalHandler = (p)=>{
     setModal(true);
     setSelectedPizza(p)  
     }
+    const removeModalHandler = ()=>{
+      setModal(false)
+    }
     return (
    <Aux>
-     { setModal(true)?
-       <Backdrop clicked={toggleModalHandler}/>: null}
-    { setModal(true) ?
+     {  showModal ?
+       <Backdrop clicked={removeModalHandler}/>: null}
+    { showModal ?
      <Modal 
-     clicked={toggleModalHandler}
+     clicked={removeModalHandler}
      ingredients={selectedPizza.ingredients} 
      price={selectedPizza.price} 
      image={selectedPizza.image} 
-     name={selectedPizza.name}      
-     />: null}*/
+     name={selectedPizza.name} 
+     id={selectedPizza.id}     
+     addProduct={()=>addProduct(selectedPizza)}
+     increaseProduct={() => increase(selectedPizza)}/>: null}*/
      <div className={styles.Pizza} id="pizza">
              <h1>Pizza</h1>
       <div className={styles.PizzaContainer}>
