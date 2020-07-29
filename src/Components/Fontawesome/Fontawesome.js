@@ -1,5 +1,5 @@
 import { library } from '@fortawesome/fontawesome-svg-core';
 
-import { faCopyright} from '@fortawesome/free-solid-svg-icons'
+import {faMinusCircle, faPlusCircle, faTrash, faShoppingBasket, faCopyright} from '@fortawesome/free-solid-svg-icons'
  
-library.add(faCopyright)
+library.add(faMinusCircle, faPlusCircle, faTrash, faShoppingBasket, faCopyright)

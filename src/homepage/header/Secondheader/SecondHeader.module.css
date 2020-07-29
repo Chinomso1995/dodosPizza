@@ -1,8 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100&display=swap");
 .secondHeaderContainer{
   display: flex;
   justify-content: space-between;
   align-items: baseline;
   padding-bottom: 5px;
+  font-family: 'Noto Sans JP', sans-serif;
 }
 
 .secondHeaderContainer img{
@@ -40,7 +42,41 @@
   color: white;
   text-decoration: none;
 }
+.shoppingCart{
+  display: none;
+}
 @media (max-width: 500px){
+  .shoppingCart{
+    display: block;
+    background-color: #F97225;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+  }
+  .shoppingCartCounter{
+    font-size: 1rem;
+    position: absolute;
+    color: #F97225;
+    border: 1px solid #F97225;
+    width: 25px;
+    height: 25px;
+    border-radius: 100%;
+    background-color: white;
+    right: 0;
+    display: flex;
+    align-items: center;
+  }
+  .shoppingCartCounter span{
+    margin: auto;
+  }
+  .shoppingCartPicture{
+    position: absolute;
+    top: 10px;
+    left: 12px;
+  }
   .secondHeaderContainer{
     padding-bottom: 2px;
     overflow-y: scroll;

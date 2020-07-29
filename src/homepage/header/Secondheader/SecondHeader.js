@@ -1,13 +1,15 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import styles from '../Secondheader/SecondHeader.module.css';
 import Logo from '../../../assets/logo.png';
 import {Route, NavLink as NavLink2} from 'react-router-dom';
 import{NavHashLink as NavLink1} from 'react-router-hash-link';
 import Pizza from '../../Pizza/Pizza';
 import pizzabuilder from '../../../Pizzabuilder/Pizzabuilder';
-import Aux from '../../../hoc/Auxillary/Auxillary'
-const secondHeader = (props) => {
-  
+import Aux from '../../../hoc/Auxillary/Auxillary';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {CartContext} from '../../../Context/OrderContext'
+const SecondHeader = (props) => {
+  const {  itemCount } = useContext(CartContext);
   return (
   <Aux>
   <div className={styles.secondHeaderContainer}>
@@ -22,10 +24,22 @@ const secondHeader = (props) => {
      </ul>  
     </div> 
     <div>
-      <button><NavLink2 to="/orders">My Orders</NavLink2></button>
+      { itemCount > 0 ?
+        <button><NavLink2 to="/orders">My Orders | {itemCount}</NavLink2></button> :
+        <button><NavLink2 to="/orders">My Orders</NavLink2></button>}
     </div>
    </div>
+   <div className={styles.shoppingCart}>
+     <NavLink2 to="/orders">
+        <div className={styles.shoppingCartCounter}>
+         <span>{itemCount}</span>
+        </div>
+       <div className={styles.shoppingCartPicture}>
+        <FontAwesomeIcon style={{color: 'white', fontSize: '32px'}} icon="shopping-basket"/>
+       </div> 
+       </NavLink2>
+    </div>
   </Aux>
   )
 }
-export default secondHeader
+export default SecondHeader

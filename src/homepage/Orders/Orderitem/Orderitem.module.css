@@ -23,9 +23,8 @@
   margin-left: 140px;
 }
 .OrderContentContainer{
-  margin-top: 70px;
-  max-width: 70%;
-  margin: auto;
+  max-width: 80%;
+  margin: 70px auto 0 auto;
 }
 .OrderContent{
   display: flex;
