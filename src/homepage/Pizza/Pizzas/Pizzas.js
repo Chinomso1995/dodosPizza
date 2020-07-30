@@ -6,6 +6,7 @@ import Aux from '../../../hoc/Auxillary/Auxillary';
 import Backdrop from '../../../Components/Backdrop/Backdrop';
 import {ProductsContext} from '../../../Context/ProductContext';
 import {CartContext} from '../../../Context/OrderContext';
+import Radium from 'radium';
 const Pizzas =()=> {
 
     const [showModal, setModal] = useState(false);
@@ -40,15 +41,24 @@ const Pizzas =()=> {
            
     return <div>
       <div className={styles.PizzaCard}>
-        <div className={styles.PizzaCardHeader}>
+           <div> 
            <img src={p.image} alt="pizza"/>
-           <h1>{p.name}</h1>
-          <p>{p.ingredients}</p>
-        </div>
-        <div className={styles.PizzaCardFooter}>
+           </div>
+        <div className={styles.PizzaCardHeader}>
+          <div>
+           <div>
+            <h1>{p.name}</h1>
+            <p>{p.ingredients}</p>
+           </div> 
+          <div className={styles.PizzaCardFooter}>
            <h3>from ₦{p.price}</h3>
-           <button onClick={()=>toggleModalHandler(p)}>Select</button>
-        </div>  
+           <button onClick={()=>toggleModalHandler(p)}>
+             <span>from ₦{p.price}</span>
+             <span>Select</span>
+             </button>
+          </div>  
+          </div>
+        </div>     
     </div>
     </div>
   })}
@@ -58,4 +68,4 @@ const Pizzas =()=> {
   </Aux>
   )
 }
-export default Pizzas;
+export default Radium(Pizzas);

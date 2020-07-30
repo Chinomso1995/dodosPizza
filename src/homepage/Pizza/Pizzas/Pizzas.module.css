@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap");
+
 *{
   box-sizing: border-box;
 }
@@ -66,11 +68,55 @@
   padding: 10px;
   width: 100px;
 }
+.PizzaCardHeader button span:first-of-type{
+  display: none;
+}
 @media (max-width: 500px){
-  
+  .Pizza{
+    width: 90%;
+  }
   .PizzaContainer{
     display: flex;
     flex-direction: column;
     margin: 20px auto 0px auto;
+  }
+  
+  .PizzaContainer img{
+    width: 150px;
+    height: 150px;
+  }
+  .PizzaCard{
+    flex-direction: row;
+  }
+  .PizzaCardHeader{
+    display: flex;
+    justify-content: space-around;
+    margin-left: 30px;
+    font-family: 'Open Sans', sans-serif;
+  }
+  .PizzaCardHeader h1{
+    font-size: 0.9rem;
+  }
+  .PizzaCardHeader p{
+    font-size: 0.8rem;
+  }
+  .PizzaCardFooter h3{
+    display: none;
+  }
+  .PizzaCardHeader button span:first-of-type{
+    display: block;
+  }
+  .PizzaCardHeader button span:last-of-type{
+    display: none;
+  }
+  .PizzaCardFooter{
+    margin-top: 55px;
+  }
+  .PizzaCardFooter button{
+    padding: 5px;
+    height: 30px;
+    border-radius: 10px;
+    margin-left: 0;
+    
   }
 }

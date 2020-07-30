@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap");
 *{
   box-sizing: border-box;
 }
@@ -24,21 +25,21 @@
 .DessertsCard div:first-of-type{
   width: 100%;
 }
-.DessertsCard div:first-of-type h1{
+.DessertsHeader div:first-of-type h1{
   font-size: 1.2rem;
 }
-.DessertsCard div:first-of-type p{
+.DessertsHeader div:first-of-type p{
   color: #918F8E;
   font-size: 0.9rem;
 }
-.DessertsCard div:last-of-type{
+.DessertsFooter{
   margin: 20px 0 5px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-top: 16px;
 }
-.DessertsCard div:last-of-type button{
+.DessertsFooter button{
   background-color: white;
   color: #F97225;
   border: 1px solid #F97225;
@@ -46,9 +47,51 @@
   padding: 10px;
   width: 150px;
 }
+.DessertsFooter button span:first-of-type{
+  display: none;
+}
 @media (max-width: 500px){
+  .Desserts{
+    width: 90%;
+  }
+  .Desserts>h1{
+    font-size: 1.4rem;
+    font-family: 'Open Sans', sans-serif;
+  }
   .DessertsContainer{
     display: flex;
     flex-direction: column;
   }
+  .ImageContainer{
+    width: 30%;
+    max-width: 50%;
+  }
+  .DessertsContainer img{
+    width: 150px;
+    height: 150px;
+  }
+
+  .Desserts{
+    width: 90%;
+  }
+  .DessertsCard{
+    flex-direction: row;
+    font-family: 'Open Sans', sans-serif;
+  }
+  .DessertsFooter button span:first-of-type{
+    display: block;
+  }
+  .DessertsFooter h3{
+    display: none;
+  }
+ .DessertsFooter button span:last-of-type{
+  display: none;
+}
+ .DessertsFooter button{
+  padding: 5px;
+  height: 30px;
+  border-radius: 10px;
+  margin-left: 0;
+  width: 90px;
+ }
 }

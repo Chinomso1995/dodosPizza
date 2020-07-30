@@ -14,12 +14,15 @@ const Drinks = () => {
       <div className={styles.DrinksContainer}>
         {drinkproducts.map(drink=>{
           return  <div className={styles.DrinksCard}>
-                    <div>
-                      <img src={drink.image} alt="cocacola"/>
-                      <h1>{drink.name}</h1>
-                      <p>{drink.details}</p>
-                     </div>
-                    <div>
+                    <div className={styles.ImageContainer}>
+                       <img src={drink.image} alt="cocacola"/>
+                    </div>
+                    <div className={styles.DrinkHeader}>
+                      <div>
+                       <h1>{drink.name}</h1>
+                       <p>{drink.details}</p>
+                      </div>
+                     <div className={styles.DrinkFooter}>
                       <h3>₦{drink.price}</h3>
                       {
                        isInCart(drink) && 
@@ -27,9 +30,14 @@ const Drinks = () => {
                        onClick={() => increase(drink)}>Add more</button>
                      }
                       { !isInCart(drink) &&
-                        <button onClick={()=>addProduct(drink)}>Add to basket</button>}
+                        <button onClick={()=>addProduct(drink)}>
+                          <span>from ₦{drink.price}</span>  
+                           <span>Add to basket</span>
+                        </button>}
                     </div>
                   </div>
+                    
+                </div>
         })}
       </div>
     </div>

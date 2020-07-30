@@ -14,12 +14,15 @@ const Desserts = () => {
        <div className={styles.DessertsContainer}>
              {dessertproducts.map(dessert=>{
                return <div className={styles.DessertsCard}> 
-                         <div>
-                           <img src={dessert.image} alt="cinnamonrollsone"/>
-                           <h1>{dessert.name}</h1>
-                           <p>{dessert.details}</p>
-                         </div>
-                         <div>
+                        <div className={styles.ImageContainer}>
+                             <img src={dessert.image} alt="cinnamonrollsone"/>
+                        </div>
+                         <div className={styles.DessertsHeader}>
+                           <div>
+                            <h1>{dessert.name}</h1>
+                            <p>{dessert.details}</p>
+                           </div>
+                           <div className={styles.DessertsFooter}>
                            <h3>₦{dessert.price}</h3>
                            {
                              isInCart(dessert) && 
@@ -27,7 +30,11 @@ const Desserts = () => {
                              onClick={() => increase(dessert)}>Add more</button>
                             }
                          { !isInCart(dessert) &&
-                         <button onClick={()=>addProduct(dessert)}>Add to basket</button>}
+                         <button onClick={()=>addProduct(dessert)}>
+                           <span>from ₦{dessert.price}</span>  
+                           <span>Add to basket</span>
+                           </button>}
+                         </div> 
                          </div>
                       </div>
              })}

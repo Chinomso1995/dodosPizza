@@ -14,13 +14,17 @@ const Sides = ()=> {
       <h1>Sides</h1>
       <div className={styles.SidesContainer}>
             {sideproducts.map(side=>{
+                    
               return <div className={styles.SidesCard}>
-                        <div>
+                        <div className={styles.ImageContainer}>
                          <img src={side.image} alt="sausagerollone"/>
-                         <h1>{side.name}</h1>
-                         <p>{side.details}</p>
                         </div>
-                        <div>
+                        <div className={styles.SidesHeader}>
+                         <div>
+                          <h1>{side.name}</h1>
+                          <p>{side.details}</p>
+                         </div>
+                        <div className={styles.SidesFooter}>
                           <h3>₦{side.price}</h3>
                           {
                              isInCart(side) && 
@@ -28,8 +32,12 @@ const Sides = ()=> {
                              onClick={() => increase(side)}>Add more</button>
                             }
                          { !isInCart(side) &&
-                         <button onClick={()=>addProduct(side)}>Add to basket</button>}
-                         </div>
+                         <button onClick={()=>addProduct(side)}>
+                         <span>from ₦{side.price}</span>  
+                         <span>Add to basket</span>
+                         </button>}
+                         </div>  
+                        </div>  
                      </div>  })} 
         </div>
         </div>
