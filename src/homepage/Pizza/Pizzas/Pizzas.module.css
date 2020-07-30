@@ -17,6 +17,7 @@
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(5, 1fr);
   column-gap: 10px;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .PizzaContainer img:hover{
@@ -64,9 +65,11 @@
   background-color: white;
   color: #F97225;
   border: 1px solid #F97225;
-  border-radius: 5px;
-  padding: 10px;
+  border-radius: 10px;
+  padding: 3px;
   width: 100px;
+  height: 45px;
+ 
 }
 .PizzaCardHeader button span:first-of-type{
   display: none;
@@ -93,6 +96,7 @@
     justify-content: space-around;
     margin-left: 30px;
     font-family: 'Open Sans', sans-serif;
+    width: 100%;
   }
   .PizzaCardHeader h1{
     font-size: 0.9rem;
