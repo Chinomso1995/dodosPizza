@@ -72,6 +72,7 @@
   }
   .shoppingCartCounter span{
     margin: auto;
+    font-weight: 700;
   }
   .shoppingCartPicture{
     position: absolute;
